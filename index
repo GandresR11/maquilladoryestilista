@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Saloon</title>
-    <meta name="description" content="The Saloon: Descubre el arte del estilismo de precisión en Madrid. Diseño de color personalizado, rituales capilares de lujo y cortes de autor. ¡Agenda tu cita hoy!">
     <link rel="icon" type="image/png" href="imagenes/imagen_logo.png"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,90 +11,255 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header class="header">
-        <div class="container nav-bar" style="justify-content: center;">
-            <div class="logo-imagen">
-                <a href="#">
-                    <img src="imagenes/logo_completo.png" alt="Logo The Saloon" style="height: 50px;">
-                </a>
-            </div>
-            </div>
-    </header>
-    
-    <main class="hero" style="min-height: 60vh; display: flex; align-items: center;">
-        <div class="container" style="max-width: 900px;">
-            <div class="hero-content" style="margin: auto;">
-                
-                <h1 class="hero-title" style="color: var(--color-acento-dorado); font-size: 3.5em;">
-                    THE SALOON
-                </h1>
-                
-                <p class="hero-subtitle" style="font-family: 'Playfair Display', serif; font-size: 1.8em; margin: 1em 0;">
-                    Próximamente: El arte de la belleza sutil.
-                </p>
-                
-                <p style="color: var(--color-base-oscuro); font-size: 1.1em; max-width: 90%; margin: 1.5em auto 0;">
-                    Estamos creando un espacio de lujo. Mientras tanto, puedes contactarnos directamente para consultas.
-                </p>
-
-                <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" style="margin-top: 2.5em; padding: 12px 30px; font-size: 1em;">
-                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
-                </a>
-            </div>
+    <div id="reservas-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="cerrarReservasGoogleModal()">Cerrar</span>
+            <iframe id="google-calendar-iframe" src="" frameborder="0" style="width:98%; height:95%;"></iframe>
         </div>
-    </main>
-    
-    <section class="section section-contact-location bg-light" id="contacto" aria-labelledby="heading-contacto">
-        <div class="container">
-            <h2 id="heading-contacto" style="color: var(--color-negro-mate); text-align: center; margin-bottom: 2em;">
-                Información de Contacto y Ubicación
-            </h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info fade-in-up" style="color: var(--color-negro-mate);">
-                    
-                    <h3 style="color: var(--color-acento-dorado); margin-bottom: 1em;">Visítanos</h3>
-                    <address>
-                        <strong>THE SALOON</strong><br>
-                        Calle Pedro Rico 13, Madrid, España<br>
-                        <a href="https://www.google.com/maps/place/C.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a/@40.4843621,-3.6945307,3a,30y,82.32h,87.63t/data=!3m7!1e1!3m5!1s0rQOZBcPk6L0Lw7kR-y9gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.3735828867047815%26panoid%3D0rQOZBcPk6L0Lw7kR-y9gg%26yaw%3D82.32358148053342!7i16384!8i8192!4m15!1m8!3m7!1s0xd422970767f19cb:0x5255e893f78baab7!2sC.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a!3b1!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v!3m5!1s0xd422970767f19cb:0x5255e893f78baab7!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link-map" style="color: var(--color-acento-dorado); text-decoration: underline;">Ver en el mapa</a>
-                    </address>
-                    
-                    <h3 style="color: var(--color-acento-dorado); margin-top: 2em; margin-bottom: 1em;">Contáctanos</h3>
-                    <p>Teléfono: <a href="tel:+34641798933" style="color: var(--color-negro-mate);">+34 641 79 89 33</a></p>
-                    <p>Email: <a href="mailto:info@thesaloon.com" style="color: var(--color-negro-mate);">info@thesaloon.com</a></p>
-                     <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" style="margin-bottom: 2.5rem;margin-top: 2.5em; padding: 12px 30px; font-size: 1em;">
-                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
-                </a>
-                </div>
-                
-                <div class="map-placeholder fade-in-up">
-                    <div style="width: 100%; height: 100%; min-height: 400px; overflow: hidden; position: relative;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.5948766063225!2d-3.696921025088177!3d40.48422675153018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422970767f19cb%3A0x5255e893f78baab7!2sC.%20de%20Pedro%20Rico%2C%2013%2C%20Fuencarral-El%20Pardo%2C%2028029%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sus!4v1759687259862!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container nav-bar">
+        <div class="logo-imagen">
+            <a href="index.html">
+                <img src="imagenes/logo_completo.png" alt="Logo The Saloon" style="height: 50px;"> </a>
+        </div>
+       
+        
+        <button class="nav-toggle" aria-label="Abrir menú de navegación">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-menu">
+            <button class="close-menu" aria-label="Cerrar menú de navegación">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="acerca.html" class="nav-link">Acerca</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="Agenda_tu_cita.html" class="nav-link">Agenda</a></li>
+               
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+    <main id="home-page">
+        <section class="hero" aria-label="Bienvenida al Salón Chic">
+            <div class="hero-content">
+                <h1 class="hero-title">El Arte de la Belleza Sutil</h1>
+                <p class="hero-subtitle">Descubre la elegancia atemporal. Tu estilo, nuestra pasión.</p>
+                <button class="btn"  onclick="abrirReservasGoogleModal()">    Reservar una cita</button>
+
+
+              <script>
+    const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxl?gv=true';
+    const modal = document.getElementById('reservas-modal');
+    const iframe = document.getElementById('google-calendar-iframe');
+
+    function abrirReservasGoogleModal() {
+        // 1. Cargamos la URL de Google Calendar en el iframe
+        iframe.src = urlGoogle;
+        
+        // 2. Mostramos el modal
+        modal.style.display = 'flex'; // Usamos flex para centrar
+        document.body.style.overflow = 'hidden'; // Evita el scroll en el body
+    }
+
+    function cerrarReservasGoogleModal() {
+        // 1. Ocultamos el modal
+        modal.style.display = 'none';
+        
+        // 2. Restauramos el scroll del body
+        document.body.style.overflow = 'auto';
+        
+        // Opcional: Detenemos la carga del iframe al cerrar para liberar recursos
+        iframe.src = 'about:blank'; 
+    }
+
+    // Opcional: Cerrar el modal al hacer clic fuera de su contenido
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            cerrarReservasGoogleModal();
+        }
+    }
+</script>
+
+            </div>
+        </section>
+
+        <section class="section section-about-intro" aria-labelledby="heading-about-intro">
+            <div class="container">
+                <h2 id="heading-about-intro">La Maestría Detrás de la Belleza</h2>
+                <div class="about-content-grid">
+                    <div class="about-text">
+                        <p>En THE SALOON, creemos que la verdadera belleza reside en la armonía y la sofisticación. [Nombre del Estilista] no solo crea peinados, sino que esculpe arte con cada hebra, combinando técnicas clásicas con una visión moderna para realzar tu esencia natural.</p>
+                        <p>Cada visita es una experiencia personalizada, donde la atención al detalle y el servicio excepcional son la base de nuestra promesa. Sumérgete en un espacio de calma y lujo, diseñado para tu completo bienestar y transformación.</p>
+                        <a href="acerca.html" class="btn btn-secondary">Conoce al Estilista</a>
+                    </div>
+                    <div class="about-image-wrapper">
+                        <img src="imagenes/foto1.png" alt="Retrato profesional del estilista principal de Salon Chic, elegante y sereno" class="about-image">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="section section-featured-services bg-light" aria-labelledby="heading-featured-services">
+            <div class="container">
+                <h2 id="heading-featured-services">Nuestros Servicios Exclusivos</h2>
+                <p class="section-description">Un viaje hacia la perfección, diseñado solo para ti.</p>
+                
+                <div class="grid-gallery">
+                    <article class="gallery-item service-card fade-in-up">
+                        <img src="imagenes/foto2.png" alt="Detalle de un peinado con ondas suaves y brillo" class="gallery-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Diseño de Color Personalizado</h3>
+                            <p class="product-price">Desde $150</p>
+                            <a href="servicios.html#color" class="btn btn-secondary">Explorar</a>
+                        </div>
+                    </article>
+                    <article class="gallery-item service-card fade-in-up">
+                        <img src="imagenes/foto3.png" alt="Primer plano de un corte de cabello moderno y preciso" class="gallery-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Corte de Precisión de Autor</h3>
+                            <p class="product-price">Desde $80</p>
+                            <a href="servicios.html#corte" class="btn btn-secondary">Explorar</a>
+                        </div>
+                    </article>
+                    <article class="gallery-item service-card fade-in-up">
+                        <img src="imagenes/foto4.png" alt="Tratamiento capilar de lujo aplicado al cabello" class="gallery-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Rituales Capilares de Lujo</h3>
+                            <p class="product-price">Desde $120</p>
+                            <a href="servicios.html#tratamientos" class="btn btn-secondary">Explorar</a>
+                        </div>
+                    </article>
+                </div>
+                 <a href="servicios.html" class="btn">Ver Todos los Servicios</a>
+            </div>
+        </section>
+
+        <section class="section section-video" aria-labelledby="heading-video">
+            <div class="container">
+                <h2 id="heading-video">Descubre el Arte en Movimiento</h2>
+                <p>Mira a nuestros estilistas en acción, transformando y creando belleza con cada detalle.</p>
+                <div class="video-wrapper fade-in-up">
+                    <div class="video-placeholder">Video del Estilista Aquí</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-contact-location bg-light" id="contacto" aria-labelledby="heading-contacto">
+            <div class="container">
+                <h2 id="heading-contacto">Conéctate con Nosotros</h2>
+                <p>Estamos ubicados en el corazón de la ciudad, listos para realzar tu belleza.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info fade-in-up">
+                        <h3>Visítanos</h3>
+                        <address>
+                            <strong>THE SALOON</strong><br>
+                            Calle Pedro Rico 13, Madrid, España<br>
+                            <a href="https://www.google.com/maps/place/C.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a/@40.4843621,-3.6945307,3a,30y,82.32h,87.63t/data=!3m7!1e1!3m5!1s0rQOZBcPk6L0Lw7kR-y9gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.3735828867047815%26panoid%3D0rQOZBcPk6L0Lw7kR-y9gg%26yaw%3D82.32358148053342!7i16384!8i8192!4m15!1m8!3m7!1s0xd422970767f19cb:0x5255e893f78baab7!2sC.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a!3b1!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v!3m5!1s0xd422970767f19cb:0x5255e893f78baab7!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link-map">Ver en el mapa</a>
+                        </address>
+                        <h3>Contáctanos</h3>
+                        <p>Teléfono: <a href="tel:+34641798933">+34 641 79 89 33</a></p>
+                        <p>Email: <a href="mailto:info@salonchic.com">info@thesaloon.com</a></p>
+                        <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" aria-label="Contactar por WhatsApp">
+                            <i class="fab fa-whatsapp"></i> Chatea con nosotros
+                        </a>
+                    </div>
+                    <div class="map-placeholder fade-in-up" style="height: 300px; background-color: var(--color-gris-perla); margin-top: 2em; display: flex; align-items: center; justify-content: center; color: var(--color-negro-mate);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1759627404816!6m8!1m7!1s0rQOZBcPk6L0Lw7kR-y9gg!2m2!1d40.484362134798!2d-3.694530656109942!3f82.32358148053342!4f-2.3735828867047815!5f2.299968626952992" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <a href="#" class="footer-logo">The Saloon</a>
-            
+            <a href="index.html" class="footer-logo">Salon Chic</a>
             <div class="social-links" aria-label="Redes Sociales">
                 <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
             </div>
-            
-            <p>© <span id="current-year"></span> The Saloon. Todos los derechos reservados.</p>
+            <p>&copy; <span id="current-year"></span> Salon Chic. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
+        // Actualizar año en el footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Lógica para el menú hamburguesa (toggle)
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.add('active');
+            navToggle.setAttribute('aria-expanded', true);
+            document.body.classList.add('menu-open'); // Añadir clase para el overlay
+        });
+
+        closeMenu.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', false);
+            document.body.classList.remove('menu-open'); // Quitar clase del overlay
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', false);
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+
+        // Opcional: Cerrar menú si se hace clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggle.contains(e.target) && !closeMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', false);
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Animación de revelación al hacer scroll (requiere JavaScript)
+        const faders = document.querySelectorAll('.fade-in-up');
+        const appearOptions = {
+            threshold: 0.3, // Cuando el 30% del elemento es visible
+            rootMargin: "0px 0px -50px 0px" // Inicia la animación 50px antes del final del viewport
+        };
+        const appearOnScroll = new IntersectionObserver(function(
+            entries,
+            appearOnScroll
+        ) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appeared');
+                    appearOnScroll.unobserve(entry.t
+                                             arget);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
     </script>
+
 </body>
 </html>
