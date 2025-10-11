@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Saloon</title>
+    <meta name="description" content="The Saloon: Descubre el arte del estilismo de precisión en Madrid. Diseño de color personalizado, rituales capilares de lujo y cortes de autor. ¡Agenda tu cita hoy!">
+    <link rel="icon" type="image/png" href="imagenes/imagen_logo.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav-bar" style="justify-content: center;">
+            <div class="logo-imagen">
+                <a href="#">
+                    <img src="imagenes/logo_completo.png" alt="Logo The Saloon" style="height: 50px;">
+                </a>
+            </div>
+            </div>
+    </header>
+    
+    <main class="hero" style="min-height: 60vh; display: flex; align-items: center;">
+        <div class="container" style="max-width: 900px;">
+            <div class="hero-content" style="margin: auto;">
+                
+                <h1 class="hero-title" style="color: var(--color-acento-dorado); font-size: 3.5em;">
+                    THE SALOON
+                </h1>
+                
+                <p class="hero-subtitle" style="font-family: 'Playfair Display', serif; font-size: 1.8em; margin: 1em 0;">
+                    Próximamente: El arte de la belleza sutil.
+                </p>
+                
+                <p style="color: var(--color-base-oscuro); font-size: 1.1em; max-width: 90%; margin: 1.5em auto 0;">
+                    Estamos creando un espacio de lujo. Mientras tanto, puedes contactarnos directamente para consultas.
+                </p>
+
+                <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" style="margin-top: 2.5em; padding: 12px 30px; font-size: 1em;">
+                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <section class="section section-contact-location bg-light" id="contacto" aria-labelledby="heading-contacto">
+        <div class="container">
+            <h2 id="heading-contacto" style="color: var(--color-negro-mate); text-align: center; margin-bottom: 2em;">
+                Información de Contacto y Ubicación
+            </h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info fade-in-up" style="color: var(--color-negro-mate);">
+                    
+                    <h3 style="color: var(--color-acento-dorado); margin-bottom: 1em;">Visítanos</h3>
+                    <address>
+                        <strong>THE SALOON</strong><br>
+                        Calle Pedro Rico 13, Madrid, España<br>
+                        <a href="https://www.google.com/maps/place/C.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a/@40.4843621,-3.6945307,3a,30y,82.32h,87.63t/data=!3m7!1e1!3m5!1s0rQOZBcPk6L0Lw7kR-y9gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.3735828867047815%26panoid%3D0rQOZBcPk6L0Lw7kR-y9gg%26yaw%3D82.32358148053342!7i16384!8i8192!4m15!1m8!3m7!1s0xd422970767f19cb:0x5255e893f78baab7!2sC.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a!3b1!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v!3m5!1s0xd422970767f19cb:0x5255e893f78baab7!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link-map" style="color: var(--color-acento-dorado); text-decoration: underline;">Ver en el mapa</a>
+                    </address>
+                    
+                    <h3 style="color: var(--color-acento-dorado); margin-top: 2em; margin-bottom: 1em;">Contáctanos</h3>
+                    <p>Teléfono: <a href="tel:+34641798933" style="color: var(--color-negro-mate);">+34 641 79 89 33</a></p>
+                    <p>Email: <a href="mailto:info@thesaloon.com" style="color: var(--color-negro-mate);">info@thesaloon.com</a></p>
+                     <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" style="margin-bottom: 2.5rem;margin-top: 2.5em; padding: 12px 30px; font-size: 1em;">
+                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                </a>
+                </div>
+                
+                <div class="map-placeholder fade-in-up">
+                    <div style="width: 100%; height: 100%; min-height: 400px; overflow: hidden; position: relative;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.5948766063225!2d-3.696921025088177!3d40.48422675153018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422970767f19cb%3A0x5255e893f78baab7!2sC.%20de%20Pedro%20Rico%2C%2013%2C%20Fuencarral-El%20Pardo%2C%2028029%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sus!4v1759687259862!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer-logo">The Saloon</a>
+            
+            <div class="social-links" aria-label="Redes Sociales">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            
+            <p>© <span id="current-year"></span> The Saloon. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
