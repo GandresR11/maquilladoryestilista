@@ -10,113 +10,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- </head>
+</head>
 <body>
     <header class="header">
-    <div id="reservas-modal" class="modal-overlay" style="display:none;">
-        <div class="modal-content">
-            <span class="close-button" onclick="cerrarReservasGoogleModal()">Cerrar</span>
-            <iframe id="google-calendar-iframe" src="" frameborder="0" style="width:98%; height:95%;"></iframe>
+        <div id="reservas-modal" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <span class="close-button" onclick="cerrarReservasGoogleModal()">Cerrar</span>
+                <iframe id="google-calendar-iframe" src="" frameborder="0" style="width:98%; height:95%;"></iframe>
+            </div>
         </div>
-    </div>
-    <div class="container nav-bar">
-        <div class="logo-imagen">
-            <a href="index.html">
-                <img src="imagenes/logo_completo.png" alt="Logo The Saloon" style="height: 50px;"> </a>
-        </div>
-       
         
-        <button class="nav-toggle" aria-label="Abrir menú de navegación">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <nav class="nav-menu">
-            <button class="close-menu" aria-label="Cerrar menú de navegación">
-                <i class="fas fa-times"></i>
+        <div class="container nav-bar">
+            <div class="logo-imagen">
+                <a href="index.html">
+                    <img src="imagenes/logo_completo.png" alt="Logo The Saloon" style="height: 50px;">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="acerca.html" class="nav-link">Acerca</a></li>
-                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-                <li><a href="productos.html" class="nav-link">Productos</a></li>
-                <li><a href="Agenda_tu_cita.html" class="nav-link">Agenda</a></li>
-               
-            </ul>
-        </nav>
-    </div>
-</header>
 
+            <nav class="nav-menu">
+                <button class="close-menu" aria-label="Cerrar menú de navegación">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="acerca.html" class="nav-link">Acerca</a></li>
+                    <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="Agenda_tu_cita.html" class="nav-link">Agenda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <script>
+        // URL de Google Calendar
+        const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxh?gv=true';
+        const modal = document.getElementById('reservas-modal');
+        const iframe = document.getElementById('google-calendar-iframe');
+
+        // Función para abrir la modal y cargar el iframe
+        function abrirReservasGoogleModal() {
+            iframe.src = urlGoogle;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Evita el scroll en el body
+        }
+
+        // Función para cerrar la modal
+        function cerrarReservasGoogleModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            iframe.src = 'about:blank'; // Detiene la carga
+        }
+
+        // Cerrar el modal al hacer clic fuera de su contenido
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                cerrarReservasGoogleModal();
+            }
+        }
+    </script>
 
     <main id="home-page">
         <section class="hero" aria-label="Bienvenida al Salón Chic">
             <div class="hero-content">
                 <h1 class="hero-title">El Arte de la Belleza Sutil</h1>
                 <p class="hero-subtitle">Descubre la elegancia atemporal. Tu estilo, nuestra pasión.</p>
-                <button class="btn"  onclick="abrirReservasGoogleModal()">    Reservar una cita</button>
-
-
-              <script>
-    const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxl?gv=true';
-    const modal = document.getElementById('reservas-modal');
-    const iframe = document.getElementById('google-calendar-iframe');
-
-    function abrirReservasGoogleModal() {
-        // 1. Cargamos la URL de Google Calendar en el iframe
-        iframe.src = urlGoogle;
-        
-        // 2. Mostramos el modal
-        modal.style.display = 'flex'; // Usamos flex para centrar
-        document.body.style.overflow = 'hidden'; // Evita el scroll en el body
-    }
-
-    function cerrarReservasGoogleModal() {
-        // 1. Ocultamos el modal
-        modal.style.display = 'none';
-        
-        // 2. Restauramos el scroll del body
-        document.body.style.overflow = 'auto';
-        
-        // Opcional: Detenemos la carga del iframe al cerrar para liberar recursos
-        iframe.src = 'about:blank'; 
-    }
-
-    // Opcional: Cerrar el modal al hacer clic fuera de su contenido
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            cerrarReservasGoogleModal();
-        }
-    }
-</script>
-
+                <button class="btn" onclick="abrirReservasGoogleModal()">Reservar una cita</button>
             </div>
         </section>
 
-<section id="hero-transformacion" class="hero-transformacion" aria-labelledby="hero-title">
-    <div class="container hero-grid">
-        <div class="hero-image-wrapper">
-            <img src="imagenes/foto5.png" alt="Retrato profesional del estilista principal, elegante y sereno" class="hero-image">
-        </div>
+        <section id="hero-transformacion" class="hero-transformacion" aria-labelledby="hero-title-transformacion">
+            <div class="container hero-grid">
+                <div class="hero-image-wrapper">
+                    <img src="imagenes/foto5.png" alt="Retrato profesional del estilista principal, elegante y sereno" class="hero-image">
+                </div>
+        
+                <div class="hero-text-content">
+                    <h2 id="hero-title-transformacion" class="title-transformacion">
+                        La <span class="word-split">Maestría</span> detrás de la <span class="word-split">Belleza</span>:
+                        Tu <span class="word-split">Estilo</span>, Nuestra <span class="word-split">Obra</span>.
+                    </h2>
+                    <p class="subtitle-transformacion">
+                        Esculpimos arte con cada hebra. Transformación, lujo y bienestar en THE SALOON.
+                    </p>
+                    <a href="servicios.html" class="btn btn-hero-cta">Agenda tu Experiencia</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="hero-text-content">
-            <h1 id="hero-title" class="title-transformacion">
-                La <span class="word-split">Maestría</span> detrás de la <span class="word-split">Belleza</span>:
-                Tu <span class="word-split">Estilo</span>, Nuestra <span class="word-split">Obra</span>.
-            </h1>
-            <p class="subtitle-transformacion">
-                Esculpimos arte con cada hebra. Transformación, lujo y bienestar en THE SALOON.
-            </p>
-            <a href="servicios.html" class="btn btn-hero-cta">Agenda tu Experiencia</a>
-        </div>
-    </div>
-</section>
-
-<section id="siguiente-contenido" style="height: 100vh; background-color: #f5f5f5; padding-top: 100px;">
-    <div class="container">
-        <h3>Nuestra Filosofía de Diseño</h3>
-        <p>Aquí comienza la siguiente sección, empujando al hero.</p>
-    </div>
-</section>
+        <section id="siguiente-contenido" style="height: 100vh; background-color: #f5f5f5; padding-top: 100px;">
+            <div class="container">
+                <h3 style="color: var(--color-base-oscuro);">Nuestra Filosofía de Diseño</h3>
+                <p style="color: var(--color-base-oscuro);">Aquí comienza la siguiente sección, empujando al hero.</p>
+            </div>
+        </section>
 
         <section class="section section-featured-services bg-light" aria-labelledby="heading-featured-services">
             <div class="container">
@@ -183,9 +174,9 @@
                             <i class="fab fa-whatsapp"></i> Chatea con nosotros
                         </a>
                     </div>
-                    <div class="map-placeholder fade-in-up" style="height: 300px; background-color: var(--color-gris-perla); margin-top: 2em; display: flex; align-items: center; justify-content: center; color: var(--color-negro-mate);">
+                    <div class="map-placeholder fade-in-up" style="height: 300px; background-color: var(--color-gris-neutro); margin-top: 2em; display: flex; align-items: center; justify-content: center; color: var(--color-base-oscuro);">
                         <iframe src="https://www.google.com/maps/embed?pb=!4v1759627404816!6m8!1m7!1s0rQOZBcPk6L0Lw7kR-y9gg!2m2!1d40.484362134798!2d-3.694530656109942!3f82.32358148053342!4f-2.3735828867047815!5f2.299968626952992" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,85 +184,19 @@
 
     <footer class="footer">
         <div class="container">
-            <a href="index.html" class="footer-logo">Salon Chic</a>
+            <a href="index.html" class="footer-logo">The Saloon</a>
             <div class="social-links" aria-label="Redes Sociales">
                 <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
             </div>
-            <p>&copy; <span id="current-year"></span> Salon Chic. Todos los derechos reservados.</p>
+            <p>© <span id="current-year"></span> The Saloon. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script>
-        // Actualizar año en el footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-        // Lógica para el menú hamburguesa (toggle)
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const closeMenu = document.querySelector('.close-menu');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.add('active');
-            navToggle.setAttribute('aria-expanded', true);
-            document.body.classList.add('menu-open'); // Añadir clase para el overlay
-        });
-
-        closeMenu.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', false);
-            document.body.classList.remove('menu-open'); // Quitar clase del overlay
-        });
-
-        // Cerrar menú al hacer clic en un enlace (para móviles)
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', false);
-                    document.body.classList.remove('menu-open');
-                }
-            });
-        });
-
-        // Opcional: Cerrar menú si se hace clic fuera de él
-        document.addEventListener('click', (e) => {
-            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggle.contains(e.target) && !closeMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', false);
-                document.body.classList.remove('menu-open');
-            }
-        });
-
-        // Animación de revelación al hacer scroll (requiere JavaScript)
-        const faders = document.querySelectorAll('.fade-in-up');
-        const appearOptions = {
-            threshold: 0.3, // Cuando el 30% del elemento es visible
-            rootMargin: "0px 0px -50px 0px" // Inicia la animación 50px antes del final del viewport
-        };
-        const appearOnScroll = new IntersectionObserver(function(
-            entries,
-            appearOnScroll
-        ) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('appeared');
-                    appearOnScroll.unobserve(entry.t
-                                             arget);
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-    </script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
