@@ -118,11 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
      //       x: '-25%', 
      //       y: '-25%', 
        //     opacity: 0, 
-       //     scrollTrigger: {
-         //       trigger: "#hero-transformacion", 
-        //        start: "top top", // Inicia cuando el hero toca la parte superior
-       //         end: "bottom top", // Termina cuando el hero sale de la vista
-         //       scrub: true, // Vincula la animación al movimiento del scroll
+            scrollTrigger: {
+                trigger: "#hero-transformacion", 
+                start: "top top", // Inicia cuando el hero toca la parte superior
+                end: "bottom top", // Termina cuando el hero sale de la vista
+                scrub: true, // Vincula la animación al movimiento del scroll
             }
         });
 
