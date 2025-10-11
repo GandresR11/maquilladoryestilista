@@ -643,3 +643,82 @@ a {
     color: var(--color-texto-claro);
     text-decoration: none;
 }
+/* CÓDIGO CSS COMPLEMENTARIO */
+
+/* Estilos de la Sección Hero */
+.hero-transformacion {
+    height: 100vh; /* Ocupa toda la altura visible */
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Importante para que la imagen que viene de fuera no cause scroll */
+    position: relative;
+    background-color: #0d0d0d; /* Fondo oscuro elegante */
+    color: #f5f5f5;
+    padding: 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas: imagen | texto */
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 2; /* Asegura que el contenido esté sobre el fondo */
+}
+
+/* Imagen del Estilista */
+.hero-image-wrapper {
+    /* Posición inicial para la animación: la imagen estará fuera de la pantalla a la derecha */
+    transform: translateX(100%); 
+    opacity: 0; 
+    text-align: left; /* Posición final a la izquierda */
+    position: relative;
+    z-index: 3; /* Más alto que el texto para posibles superposiciones */
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* La imagen sin fondo es clave aquí */
+}
+
+/* Estilos del Texto (Oculto inicialmente) */
+.hero-text-content {
+    opacity: 0; /* Oculto inicialmente para animar la entrada del texto */
+    text-align: right; /* Texto a la derecha del hero */
+}
+
+.title-transformacion {
+    font-size: 3.5rem;
+    font-weight: 300; /* Tipografía de lujo, delgada */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.word-split {
+    /* Estilo para las palabras clave, si quieres darles color o peso */
+    font-weight: 700;
+    color: #bfa17d; /* Un color dorado o de acento de lujo */
+}
+
+/* Estilos Responsivos (Móviles) */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr; /* Columna única en móviles */
+        text-align: center;
+    }
+    .hero-image-wrapper {
+        order: 2; /* Pone la imagen abajo */
+    }
+    .hero-text-content {
+        order: 1; /* Pone el texto arriba */
+        text-align: center;
+    }
+    .title-transformacion {
+        font-size: 2rem;
+    }
+}
