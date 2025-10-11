@@ -113,16 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- PARTE B: TRANSICIÓN AL SCROLL (ScrollTrigger) ---
 
         // Efecto de la IMAGEN al hacer scroll (Se encoge y desaparece hacia la esquina superior izquierda)
-        gsap.to(".hero-image-wrapper", {
-            scale: 0.3, 
-            x: '-25%', 
-            y: '-25%', 
-            opacity: 0, 
-            scrollTrigger: {
-                trigger: "#hero-transformacion", 
-                start: "top top", // Inicia cuando el hero toca la parte superior
-                end: "bottom top", // Termina cuando el hero sale de la vista
-                scrub: true, // Vincula la animación al movimiento del scroll
+  //      gsap.to(".hero-image-wrapper", {
+    //        scale: 0.3, 
+     //       x: '-25%', 
+     //       y: '-25%', 
+       //     opacity: 0, 
+       //     scrollTrigger: {
+         //       trigger: "#hero-transformacion", 
+        //        start: "top top", // Inicia cuando el hero toca la parte superior
+       //         end: "bottom top", // Termina cuando el hero sale de la vista
+         //       scrub: true, // Vincula la animación al movimiento del scroll
             }
         });
 
