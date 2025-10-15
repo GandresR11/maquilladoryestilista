@@ -289,7 +289,33 @@ a {
     max-width: 100%;
     height: auto;
     display: block;
+  
+    /* Asegura que la imagen ocupe todo el espacio de su contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+
+    /* --- ESTO ES LO IMPORTANTE: La Máscara de Gradiente --- */
+    /* Crea una capa transparente sobre la imagen que va de transparente a sólido */
+    mask-image: linear-gradient(
+        to right,    /* Dirección del gradiente: de izquierda a derecha */
+        rgba(0, 0, 0, 1) 0%,   /* Inicio: Totalmente opaco (negro con opacidad 1) */
+        rgba(0, 0, 0, 1) 40%,  /* Mantiene la opacidad hasta el 40% del ancho */
+        rgba(0, 0, 0, 0) 100%   /* Final: Totalmente transparente (negro con opacidad 0) */
+    );
+    /* -webkit- es necesario para asegurar la compatibilidad con navegadores basados en Chrome/Safari */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    /* Opcional: Para controlar la forma en que se aplica el gradiente */
+    mask-mode: alpha;
+    -webkit-mask-mode: alpha;
 }
+
 
 /* Texto (Posicionamiento Inicial para GSAP) */
 .hero-text-content {
