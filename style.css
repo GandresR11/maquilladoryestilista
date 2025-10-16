@@ -9,7 +9,8 @@
     --color-texto-claro: #F5F5F5;       /* Blanco Roto para texto principal */
     --color-gris-neutro: #C0C0C0;       /* Gris para texto o bordes sutiles */
     --color-acento-claro: #E4D3A9;      /* Dorado Claro para acentos secundarios */
-
+    --color-fondo-claro: #F5F5F5;       /* Blanco Roto para texto principal */
+    
     /* Tipografía */
     --fuente-serif: 'Playfair Display', serif;
     --fuente-sans-serif: 'Montserrat', sans-serif;
@@ -415,7 +416,7 @@ a {
 }
 
 .modal-content {
-    background-color: var(--color-base-oscuro);
+    background-color: var(--color-fondo-claro);
     padding: 20px;
     border: 1px solid var(--color-acento-dorado);
     border-radius: 8px;
