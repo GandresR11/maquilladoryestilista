@@ -257,7 +257,7 @@ a {
 /* 6. HERO TRANSFORMACIÓN (EFECTO 1) - Implementación GSAP */
 /* ========================================================================= */
 .hero-transformacion {
-    height: 100vh; 
+    /*height: 100vh; */
     display: flex;
     align-items: center;
     overflow: hidden; 
