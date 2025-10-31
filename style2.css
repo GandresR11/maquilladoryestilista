@@ -2,20 +2,20 @@
 /* 1. VARIABLES GLOBALES Y RESET BASICO */
 /* ========================================================================= */
 :root {
-    /* Paleta de Colores (Estilo de Lujo: Negro, Dorado, Oliva) */
-    --color-base-oscuro: #191919;       /* Negro Base para fondos principales */
-    --color-acento-dorado: #B69B60;     /* Dorado Principal para acentos y CTAs */
-    --color-fondo-secundario: #4A4D34;  /* Oliva Oscuro para fondos de tarjetas/secciones */
-    --color-texto-claro: #F5F5F5;       /* Blanco Roto para texto principal */
-    --color-gris-neutro: #C0C0C0;       /* Gris para texto o bordes sutiles */
-    --color-acento-claro: #E4D3A9;      /* Dorado Claro para acentos secundarios */
-    --color-fondo-claro: #F5F5F5;       /* Fondo claro, usado en modales o secciones muy claras */
+    /* Paleta de Colores (Estilo "The Saloon": Crema, Oliva, Dorado) */
+    --color-base-oscuro: #4A4D34;      /* Oliva Oscuro Intenso (El color más oscuro presente) */
+    --color-acento-dorado: #B69B60;    /* Dorado/Bronce Principal (Para acentos y CTAs - Mantenido) */
+    --color-fondo-secundario: #C5BA8F; /* Crema/Oliva Claro (El tono más común en el fondo) */
+    --color-texto-claro: #191919;      /* Negro o Gris Muy Oscuro (Para el texto principal sobre fondos claros) */
+    --color-gris-neutro: #696A4B;      /* Oliva Medio para texto o bordes sutiles sobre crema */
+    --color-acento-claro: #F1EAD9;     /* Crema Muy Claro (Fondo principal de la lista de precios) */
+    --color-fondo-claro: #F5F5F5;      /* Blanco Puro o Roto para modales (Mantenido) */
     
-    /* Tipografía */
+    /* Tipografía (Mantenidas) */
     --fuente-serif: 'Playfair Display', serif;
     --fuente-sans-serif: 'Montserrat', sans-serif;
 
-    /* Transiciones */
+    /* Transiciones (Mantenidas) */
     --tiempo-transicion: 0.35s;         
     --curva-transicion: ease-in-out;    
 }
