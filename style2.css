@@ -2,14 +2,14 @@
 /* 1. VARIABLES GLOBALES Y RESET BASICO */
 /* ========================================================================= */
 :root {
-    /* Paleta de Colores (Estilo "The Saloon": Crema, Oliva, Dorado) */
-    --color-base-oscuro: #4A4D34;      /* Oliva Oscuro Intenso (El color más oscuro presente) */
-    --color-acento-dorado: #B69B60;    /* Dorado/Bronce Principal (Para acentos y CTAs - Mantenido) */
-    --color-fondo-secundario: #C5BA8F; /* Crema/Oliva Claro (El tono más común en el fondo) */
-    --color-texto-claro: #191919;      /* Negro o Gris Muy Oscuro (Para el texto principal sobre fondos claros) */
-    --color-gris-neutro: #696A4B;      /* Oliva Medio para texto o bordes sutiles sobre crema */
-    --color-acento-claro: #F1EAD9;     /* Crema Muy Claro (Fondo principal de la lista de precios) */
-    --color-fondo-claro: #F5F5F5;      /* Blanco Puro o Roto para modales (Mantenido) */
+    /* Paleta de Colores (Versión Luminosa: Blanco Roto, Marrón Cálido, Dorado Suave) */
+    --color-base-oscuro: #8B4513;      /* Marrón Cálido Intenso (Para el texto principal sobre fondos muy claros) */
+    --color-acento-dorado: #CBA276;    /* Dorado Cálido y Suave (Acentos, botones, logo - Mantenido) */
+    --color-fondo-secundario: #F0E8E7; /* Rosado Claro / Beige del fondo general (Fondo para secciones con textura) */
+    --color-texto-claro: #FFFFFF;      /* Blanco Puro (Para texto sobre acentos oscuros o bases de hero) */
+    --color-gris-neutro: #A0A0A0;      /* Gris Medio (Para texto secundario, subtítulos o bordes) */
+    --color-acento-claro: #F8F2ED;     /* Rosado Muy Claro / Blanco Roto (Para fondos de tarjetas y el body principal) */
+    --color-fondo-claro: #FFFFFF;      /* Blanco Puro (Máxima luminosidad) */
     
     /* Tipografía (Mantenidas) */
     --fuente-serif: 'Playfair Display', serif;
@@ -124,7 +124,7 @@ a {
 .header {
     background-color: var(--color-base-oscuro); 
     padding: 1.5em 0;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 1000;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
