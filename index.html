@@ -19,7 +19,7 @@
 
     <div id="reservas-modal" class="modal-overlay" aria-hidden="true" role="dialog">
         <div class="modal-content">
-            <span class="close-button" onclick="cerrarReservasGoogleModal()" aria-label="Cerrar modal">&times;</span>
+            <span class="close-button" onclick="cerrarReservasGoogleModal()" aria-label="Cerrar modal">×</span>
             <iframe id="google-calendar-iframe" src="" frameborder="0" class="calendar-iframe" title="Agenda de citas online"></iframe>
         </div>
     </div>
@@ -75,7 +75,7 @@
                 <div class="hero-text-content fade-in-up">
                     <h2 class="section-title">La Maestría</h2>
                     <p class="section-description">Tu estilo, nuestra obra de arte.</p>
-                    <p>Esculpimos cada detalle para resaltar tu esencia. En THE SALOON, el lujo se vive en cada transformación.</p>
+                    <p>Esculpimos cada detalle para resaltar tu esencia. En THE SALOON, el lujo se vive en cada transformación personalizada.</p>
                     <button class="btn" onclick="abrirReservasGoogleModal()">Comenzar mi cambio</button>
                 </div>
             </div>
@@ -102,32 +102,32 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Servicios</h2>
+                <h2 class="section-title">Servicios Exclusivos</h2>
                 <p class="section-description">Experiencias diseñadas a medida</p>
                 
                 <div class="grid-gallery">
                     <article class="product-card fade-in-up">
-                        <img src="imagenes/foto2.png" alt="Tratamientos" class="gallery-image">
+                        <img src="imagenes/foto2.png" alt="Rituales Capilares" class="gallery-image">
                         <div class="product-info">
                             <h3>Rituales Capilares</h3>
                             <p class="product-price">Desde 150€</p>
-                            <a href="servicios.html#tratamientos" class="btn">Detalles</a>
+                            <a href="servicios.html#tratamientos" class="btn">Explorar Detalles</a>
                         </div>
                     </article>
                     <article class="product-card fade-in-up">
                         <img src="imagenes/foto3.png" alt="Colorimetría" class="gallery-image">
                         <div class="product-info">
-                            <h3>Colorimetría Alta Gama</h3>
+                            <h3>Colorimetría de Alta Gama</h3>
                             <p class="product-price">Desde 80€</p>
-                            <a href="servicios.html#color" class="btn">Detalles</a>
+                            <a href="servicios.html#color" class="btn">Explorar Detalles</a>
                         </div>
                     </article>
                     <article class="product-card fade-in-up">
-                        <img src="imagenes/foto4.png" alt="Corte" class="gallery-image">
+                        <img src="imagenes/foto4.png" alt="Corte de Autor" class="gallery-image">
                         <div class="product-info">
                             <h3>Corte de Autor</h3>
                             <p class="product-price">Desde 120€</p>
-                            <a href="servicios.html#corte" class="btn">Detalles</a>
+                            <a href="servicios.html#corte" class="btn">Explorar Detalles</a>
                         </div>
                     </article>
                 </div>
@@ -142,14 +142,14 @@
                         <h3>Ubicación</h3>
                         <address>
                             Calle Pedro Rico 13, Madrid<br>
-                            <a href="https://goo.gl/maps/tu-link-real" target="_blank" class="btn-link">Cómo llegar <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://goo.gl/maps/tu-link-real" target="_blank" class="btn-link">Ver en Google Maps <i class="fas fa-external-link-alt"></i></a>
                         </address>
-                        <h3>Citas</h3>
+                        <h3>Citas Directas</h3>
                         <p>WhatsApp: +34 641 79 89 33</p>
-                        <button class="btn" onclick="abrirReservasGoogleModal()">Agendar Online</button>
+                        <button class="btn" onclick="abrirReservasGoogleModal()">Agendar Cita Online</button>
                     </div>
                     <div class="map-embed-container fade-in-up"> 
-                        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy" title="Mapa The Saloon"></iframe>
+                        <iframe src="http://googleusercontent.com/maps.google.com/..." allowfullscreen="" loading="lazy" title="Mapa The Saloon"></iframe>
                     </div>
                 </div>
             </div>
@@ -169,8 +169,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <script>
-        // Lógica de Modal
         const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxl?gv=true';
         const modal = document.getElementById('reservas-modal');
         const iframe = document.getElementById('google-calendar-iframe');
@@ -189,7 +189,6 @@
             iframe.src = 'about:blank'; 
         }
 
-        // Año actual automático
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
     <script src="script.js" defer></script> 
