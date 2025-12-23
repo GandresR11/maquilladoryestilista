@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Saloon</title>
-    <meta name="description" content="The Saloon: Descubre el arte del estilismo de precisión en Madrid. Diseño de color personalizado, rituales capilares de lujo y cortes de autor. ¡Agenda tu cita hoy!">
+    <title>The Saloon | Estilismo de Lujo en Madrid</title>
+    <meta name="description" content="The Saloon: Descubre el arte del estilismo de precisión en Madrid. Diseño de color personalizado, rituales capilares de lujo y cortes de autor.">
+    
     <link rel="icon" type="image/png" href="imagenes/imagen_logo.png"> 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <header class="header">
-        <div id="reservas-modal" class="modal-overlay" style="display:none;">
-            <div class="modal-content">
-                <span class="close-button" onclick="cerrarReservasGoogleModal()">Cerrar</span>
-                <iframe id="google-calendar-iframe" src="" frameborder="0" class="calendar-iframe" title="Calendario de Reservas de Google"></iframe>
-            </div>
+
+    <div id="reservas-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <span class="close-button" onclick="cerrarReservasGoogleModal()" aria-label="Cerrar modal">&times;</span>
+            <iframe id="google-calendar-iframe" src="" frameborder="0" class="calendar-iframe" title="Agenda de citas online"></iframe>
         </div>
-        
+    </div>
+
+    <header class="header">
         <div class="container nav-bar">
             <div class="logo-imagen">
                 <a href="index.html">
-                    <img src="imagenes/logo_completo.png" alt="Logo The Saloon" class="logo-img">
+                    <img src="imagenes/logo_completo.png" alt="The Saloon Logo" class="logo-img">
                 </a>
             </div>
             
-            <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-controls="nav-menu-list">
+            <button class="nav-toggle" id="menu-open" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
             </button>
 
             <nav class="nav-menu" id="nav-menu-list">
-                <button class="close-menu" aria-label="Cerrar menú de navegación">
+                <button class="close-menu" id="menu-close" aria-label="Cerrar menú">
                     <i class="fas fa-times"></i>
                 </button>
                 <ul class="nav-list">
@@ -41,178 +45,111 @@
                     <li><a href="acerca.html" class="nav-link">Acerca</a></li>
                     <li><a href="servicios.html" class="nav-link">Servicios</a></li>
                     <li><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li><a href="Agenda_tu_cita.html" class="nav-link">Agenda</a></li>
+                    <li><a href="Agenda_tu_cita.html" class="nav-link btn">Agendar Cita</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <script>
-        const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxl?gv=true';
-        const modal = document.getElementById('reservas-modal');
-        const iframe = document.getElementById('google-calendar-iframe');
-
-        function abrirReservasGoogleModal() {
-            iframe.src = urlGoogle;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function cerrarReservasGoogleModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            iframe.src = 'about:blank'; 
-        }
-
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                cerrarReservasGoogleModal();
-            }
-        }
-    </script>
-
     <main id="home-page">
-        <section class="hero" aria-label="Bienvenida al Salón Chic">
+        
+        <section class="hero" aria-label="Bienvenida">
             <div class="hero-content fade-in-up"> 
-                <h1 class="hero-title">El Arte de la Belleza Sutil</h1>
-                <p class="hero-subtitle">Descubre la elegancia atemporal. Tu estilo, nuestra pasión.</p>
-                <button class="btn" onclick="abrirReservasGoogleModal()">Reservar una cita</button>
-                 <p class="hero-subtitle">¿Dudas o prefieres hablar con nosotros?</p>
-                <p class="hero-subtitle">Toca el icono de WhatsApp y te contestamos lo mas pronto posible.</p>
-                <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" aria-label="Contactar por WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+                <h1 class="hero-title">El Arte de la <br><span class="word-split">Belleza Sutil</span></h1>
+                <p class="hero-subtitle">Elegancia atemporal. Tu estilo, nuestra pasión.</p>
+                <div class="hero-btns">
+                    <button class="btn" onclick="abrirReservasGoogleModal()">Reservar Ahora</button>
+                    <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i> Chat Directo
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="hero-transformacion" class="hero-transformacion" aria-labelledby="hero-title-transformacion">
+        <section id="hero-transformacion" class="hero-transformacion">
             <div class="container hero-grid">
-                <div class="hero-image-wrapper">
-                    <img src="imagenes/mrgalvan1.png" alt="Retrato profesional del estilista principal, elegante y sereno" class="hero-image">
+                <div class="hero-image-wrapper fade-in-up">
+                    <img src="imagenes/mrgalvan1.png" alt="Estilista Principal" class="hero-image">
                 </div>
         
-                <div class="hero-text-content">
-                    <h2 id="hero-title-transformacion" class="title-transformacion">
-                        La <span class="word-split">Maestría</span> detrás de la <span class="word-split">Belleza</span>:
-                        Tu <span class="word-split">Estilo</span>, Nuestra <span class="word-split">Obra</span>.
-                    </h2>
-                    <p class="subtitle-transformacion">
-                        Esculpimos arte con cada hebra. Transformación, lujo y bienestar en THE SALOON.
-                    </p>
-                     <button class="btn" onclick="abrirReservasGoogleModal()">Reservar una cita</button>
+                <div class="hero-text-content fade-in-up">
+                    <h2 class="section-title">La Maestría</h2>
+                    <p class="section-description">Tu estilo, nuestra obra de arte.</p>
+                    <p>Esculpimos cada detalle para resaltar tu esencia. En THE SALOON, el lujo se vive en cada transformación.</p>
+                    <button class="btn" onclick="abrirReservasGoogleModal()">Comenzar mi cambio</button>
                 </div>
             </div>
         </section>
 
-        <section id="siguiente-contenido" class="section bg-light-soft" aria-labelledby="heading-filosofia">
+        <section id="siguiente-contenido" class="section bg-light-soft">
             <div class="container">
-                <h3 id="heading-filosofia" class="section-title text-dark">Nuestra Filosofía de Diseño</h3>
-                <p class="section-description text-dark">Aquí va carrusel de imágenes de Instagram.</p>
-                 <div class="grid-gallery temp-insta-grid">
-                     <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto22.png" alt="Ejemplo de trabajo del salón" class="gallery-image">
+                <h2 class="section-title">Inspiración</h2>
+                <p class="section-description">Síguenos en @TheSaloon</p>
+                
+                <div class="grid-gallery temp-insta-grid">
+                    <article class="gallery-item fade-in-up">
+                        <img src="imagenes/foto22.png" alt="Trabajo realizado 1" class="gallery-image">
                     </article>
-                    <article class="gallery-item service-card fade-in-up hidden-on-mobile">
-                        <img src="imagenes/foto22.png" alt="Ejemplo de trabajo del salón" class="gallery-image">
+                    <article class="gallery-item fade-in-up">
+                        <img src="imagenes/foto22.png" alt="Trabajo realizado 2" class="gallery-image">
                     </article>
-                    <article class="gallery-item service-card fade-in-up hidden-on-mobile">
-                        <img src="imagenes/foto22.png" alt="Ejemplo de trabajo del salón" class="gallery-image">
+                    <article class="gallery-item fade-in-up">
+                        <img src="imagenes/foto22.png" alt="Trabajo realizado 3" class="gallery-image">
                     </article>
-                 </div>
+                </div>
             </div>
         </section>
 
-        <section class="section section-featured-services bg-light" aria-labelledby="heading-featured-services">
+        <section class="section">
             <div class="container">
-                <h2 id="heading-featured-services">Nuestros Servicios Exclusivos</h2>
-                <p class="section-description">Un viaje hacia la perfección, diseñado solo para ti.</p>
+                <h2 class="section-title">Servicios</h2>
+                <p class="section-description">Experiencias diseñadas a medida</p>
                 
                 <div class="grid-gallery">
-                    <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto2.png" alt="Detalle de un peinado con ondas suaves y brillo" class="gallery-image">
+                    <article class="product-card fade-in-up">
+                        <img src="imagenes/foto2.png" alt="Tratamientos" class="gallery-image">
                         <div class="product-info">
-                            <h3 class="product-title">Tratamientos Capilares</h3>
-                            <p class="product-price">Desde $150</p>
-                            <a href="servicios.html#color" class="btn btn-secondary">Explorar</a>
+                            <h3>Rituales Capilares</h3>
+                            <p class="product-price">Desde 150€</p>
+                            <a href="servicios.html#tratamientos" class="btn">Detalles</a>
                         </div>
                     </article>
-                    <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto3.png" alt="Primer plano de un corte de cabello moderno y preciso" class="gallery-image">
+                    <article class="product-card fade-in-up">
+                        <img src="imagenes/foto3.png" alt="Colorimetría" class="gallery-image">
                         <div class="product-info">
-                            <h3 class="product-title">Colorimetria</h3>
-                            <p class="product-price">Desde $80</p>
-                            <a href="servicios.html#corte" class="btn btn-secondary">Explorar</a>
+                            <h3>Colorimetría Alta Gama</h3>
+                            <p class="product-price">Desde 80€</p>
+                            <a href="servicios.html#color" class="btn">Detalles</a>
                         </div>
                     </article>
-                    <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto4.png" alt="Tratamiento capilar de lujo aplicado al cabello" class="gallery-image">
+                    <article class="product-card fade-in-up">
+                        <img src="imagenes/foto4.png" alt="Corte" class="gallery-image">
                         <div class="product-info">
-                            <h3 class="product-title">Peluqeria</h3>
-                            <p class="product-price">Desde $120</p>
-                            <a href="servicios.html#tratamientos" class="btn btn-secondary">Explorar</a>
+                            <h3>Corte de Autor</h3>
+                            <p class="product-price">Desde 120€</p>
+                            <a href="servicios.html#corte" class="btn">Detalles</a>
                         </div>
                     </article>
-                     <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto2.png" alt="Detalle de un peinado con ondas suaves y brillo" class="gallery-image">
-                        <div class="product-info">
-                            <h3 class="product-title">Caballeros</h3>
-                            <p class="product-price">Desde $10</p>
-                            <a href="servicios.html#color" class="btn btn-secondary">Explorar</a>
-                        </div>
-                    </article>
-                     <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto2.png" alt="Detalle de un peinado con ondas suaves y brillo" class="gallery-image">
-                        <div class="product-info">
-                            <h3 class="product-title">Estética</h3>
-                            <p class="product-price">Desde $5</p>
-                            <a href="servicios.html#color" class="btn btn-secondary">Explorar</a>
-                        </div>
-                    </article>
-                     <article class="gallery-item service-card fade-in-up">
-                        <img src="imagenes/foto2.png" alt="Detalle de un peinado con ondas suaves y brillo" class="gallery-image">
-                        <div class="product-info">
-                            <h3 class="product-title">Miercoles y Jueves de jubilados</h3>
-                            <p class="product-price">Desde $150</p>
-                            <a href="servicios.html#color" class="btn btn-secondary">Explorar</a>
-                        </div>
-                    </article>
-                </div>
-                 <a href="servicios.html" class="btn">Ver Todos los Servicios</a>
-            </div>
-        </section>
-
-        <section class="section section-video" aria-labelledby="heading-video">
-            <div class="container">
-                <h2 id="heading-video">Descubre el Arte en Movimiento</h2>
-                <p>Mira a nuestros estilistas en acción, transformando y creando belleza con cada detalle.</p>
-                <div class="video-wrapper fade-in-up">
-                    <div class="video-placeholder responsive-video">Video del Estilista Aquí</div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-contact-location bg-light" id="contacto" aria-labelledby="heading-contacto">
+        <section class="section bg-light-soft" id="contacto">
             <div class="container">
-                <h2 id="heading-contacto">Conéctate con Nosotros</h2>
-                <p>Estamos ubicados en el corazón de la ciudad, listos para realzar tu belleza.</p>
-                
+                <h2 class="section-title">Contacto</h2>
                 <div class="contact-grid">
                     <div class="contact-info fade-in-up">
-                        <h3>Visítanos</h3>
+                        <h3>Ubicación</h3>
                         <address>
-                            <strong>THE SALOON</strong><br>
-                            Calle Pedro Rico 13, Madrid, España<br>
-                            <a href="https://www.google.com/maps/place/C.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a/@40.4843621,-3.6945307,3a,30y,82.32h,87.63t/data=!3m7!1e1!3m5!1s0rQOZBcPk6L0Lw7kR-y9gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.3735828867047815%26panoid%3D0rQOZBcPk6L0Lw7kR-y9gg%26yaw%3D82.32358148053342!7i16384!8i8192!4m15!1m8!3m7!1s0xd422970767f19cb:0x5255e893f78baab7!2sC.+de+Pedro+Rico,+13,+Fuencarral-El+Pardo,+28029+Madrid,+Espa%C3%B1a!3b1!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v!3m5!1s0xd422970767f19cb:0x5255e893f78baab7!8m2!3d40.4842227!4d-3.6943461!16s%2Fg%2F11rgg7xd2v?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link-map">Ver en el mapa</a>
+                            Calle Pedro Rico 13, Madrid<br>
+                            <a href="https://goo.gl/maps/tu-link-real" target="_blank" class="btn-link">Cómo llegar <i class="fas fa-external-link-alt"></i></a>
                         </address>
-                        <h3>Contáctanos</h3>
-                        <p>Teléfono: <a href="tel:+34641798933">+34 641 79 89 33</a></p>
-                        <p>Email: <a href="mailto:info@salonchic.com">info@thesaloon.com</a></p>
-                        <a href="https://wa.me/34641798933" target="_blank" class="btn whatsapp-btn" aria-label="Contactar por WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Chatea con nosotros
-                        </a>
+                        <h3>Citas</h3>
+                        <p>WhatsApp: +34 641 79 89 33</p>
+                        <button class="btn" onclick="abrirReservasGoogleModal()">Agendar Online</button>
                     </div>
-                    <div class="map-placeholder fade-in-up map-embed-container"> 
-                        <iframe src="https://www.google.com/maps/embed?pb=!4v1759627404816!6m8!1m7!1s0rQOZBcPk6L0Lw7kR-y9gg!2m2!1d40.484362134798!2d-3.694530656109942!3f82.32358148053342!4f-2.3735828867047815!5f2.299968626952992" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de The Saloon en Madrid"></iframe>
+                    <div class="map-embed-container fade-in-up"> 
+                        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy" title="Mapa The Saloon"></iframe>
                     </div>
                 </div>
             </div>
@@ -221,19 +158,40 @@
 
     <footer class="footer">
         <div class="container">
-            <a href="index.html" class="footer-logo">The Saloon</a>
-            <div class="social-links" aria-label="Redes Sociales">
-                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <h2 class="hero-title" style="font-size: 1.5rem;">The Saloon</h2>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
-            <p>© <span id="current-year"></span> The Saloon. Todos los derechos reservados.</p>
+            <p>© <span id="current-year"></span> Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // Lógica de Modal
+        const urlGoogle = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KXMo-G2kTb7CWXbeREXWLsK0XfBAmYgYjirtRFckvxTrZXIfQ1mSDLw-pFM0wC2IaDXFjfuxl?gv=true';
+        const modal = document.getElementById('reservas-modal');
+        const iframe = document.getElementById('google-calendar-iframe');
 
+        function abrirReservasGoogleModal() {
+            iframe.src = urlGoogle;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function cerrarReservasGoogleModal() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
+            iframe.src = 'about:blank'; 
+        }
+
+        // Año actual automático
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <script src="script.js" defer></script> 
 </body>
 </html>
