@@ -13,31 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // LÓGICA DE NAVEGACIÓN (MENÚ MÓVIL)
     // =========================================================================
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const closeMenu = document.querySelector('.close-menu');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const navMenu = document.getElementById('nav-menu-list');
 
-    // Función para abrir el menú
-    navToggle.addEventListener('click', () => {
+    // Abrir menú
+    menuOpen.addEventListener('click', () => {
         navMenu.classList.add('active');
-        navToggle.setAttribute('aria-expanded', true);
-        document.body.classList.add('menu-open'); 
     });
 
-    // Función para cerrar el menú
-    const closeNav = () => {
+    // Cerrar menú
+    menuClose.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
-        document.body.classList.remove('menu-open');
-    };
-
-    closeMenu.addEventListener('click', closeNav);
-
-    // Cerrar menú al hacer clic en un enlace (para móviles)
-    document.querySelectorAll('.nav-list a').forEach(link => {
-        link.addEventListener('click', closeNav);
     });
 
+    // Cerrar menú al hacer click en un enlace (importante en mobile)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+});
     // =========================================================================
     // ANIMACIONES GENÉRICAS DE REVELACIÓN (FADE-IN-UP)
     // Funciona con las nuevas clases añadidas a style.css
